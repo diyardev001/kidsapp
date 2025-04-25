@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "KidsApp",
-    "slug": "KidsApp",
+    "name": "kidsapp",
+    "slug": "kidsapp",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
