@@ -1,5 +1,11 @@
 # Repository for the Software Engineering lecture
 
+## Description of the Project
+
+This project aims to create an application for children and young people in the city of Herne.
+With the help of an interactive map, this application makes it possible for them to access offers in their area.
+They will also be able to filter activities, save their preferences, rate the offers, and search for them.
+
 ## Team
 
 Team Leader: Diyar Hasan
