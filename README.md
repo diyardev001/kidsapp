@@ -1,21 +1,10 @@
-# Template repository for the Software Engineering lecture
-
-> [!IMPORTANT]
-> Replace this README with a detailed description of your project, your team, and instructions on how to run it.
-
-> [!IMPORTANT]
-> If you choose to keep your repository private, make sure to invite all your team members and teaching staff. Ask for their usernames if needed.
-
-Provide a general introduction to your project. Describe the purpose, goals, and the technologies used. Explain the value your project offers.
+# Repository for the Software Engineering lecture
 
 ## Team
-List the team members involved in the project:
 
-Team Leader: [Name]
+Team Leader: Diyar Hasan
 
-Members: [Name1], [Name2], [Name3]
-(Expand this list as necessary)
-
+Members: Valentin Stein, Niklas Prinz, Abdul Balhas, Baturalp Kalabalik, Shengliang Wang
 
 
 ## Quickstart
@@ -46,12 +35,12 @@ Provide step-by-step instructions on how to clone the repository, install the pr
 
 1. Clone the repository:
 ```bash,ignore
-$ git clone https://github.com/YourRepository.git
+$ git clone https://github.com/devdiyar/kidsapp.git
 ```
 
 2. Navigate to the project directory:
 ```bash,ignore
-$ cd ProjectName
+$ cd kidsapp
 ```
 
 3. Adjust configuration files:
