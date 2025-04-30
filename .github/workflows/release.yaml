@@ -19,12 +19,9 @@ jobs:
       fail-fast: false
       matrix:
         project:
-          - 
-          # This is a list of all projects that should be built and pushed.
-          # YOU NEED TO UPDATE THIS LIST WHEN YOU ADD A NEW PROJECT AND WITH
-          # THE CORRECT NAME OF THE PROJECT FOLDER.
-          # - project_one
-          # - project_two
+          - backend
+          - kidsapp
+          - stadtserver
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -38,7 +35,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.GH_TOKEN }}
       - name: Build and push Docker image
         uses: docker/build-push-action@v6
         if: ${{ matrix.project != '' }}
