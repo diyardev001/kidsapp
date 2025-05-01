@@ -61,3 +61,6 @@ yarn-error.*
 
 # Example app
 app-example
+backend/.gitignore
+kidsapp/.gitignore
+stadtserver/.gitignore
