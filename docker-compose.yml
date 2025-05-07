@@ -3,14 +3,14 @@ version: '3.8'
 services:
   frontend:
     build:
-      context: ./kidsapp
+      context: ./mobile
       dockerfile: Dockerfile
     ports:
       - "8081:8081"
     environment:
       - NODE_ENV=development
     volumes:
-      - ./kidsapp:/app
+      - ./mobile:/app
       - /app/node_modules
 
   backend:

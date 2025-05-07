@@ -21,7 +21,7 @@ jobs:
       matrix:
         project:
           - backend
-          - kidsapp
+          - mobile
           - stadtserver
     steps:
       - name: Checkout

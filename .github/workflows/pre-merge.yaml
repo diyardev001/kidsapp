@@ -16,7 +16,7 @@ jobs:
         jdk: [24]
         project:
           - backend
-          - kidsapp
+          - mobile
           - stadtserver
     runs-on: ${{ matrix.os }}
     steps:

@@ -24,7 +24,7 @@ target/
 ### VS Code ###
 .vscode/
 
-# React Native/Expo (for kidsapp)
+# React Native/Expo (for mobile)
 # dependencies
 node_modules/
 
@@ -62,5 +62,5 @@ yarn-error.*
 # Example app
 app-example
 backend/.gitignore
-kidsapp/.gitignore
+mobile/.gitignore
 stadtserver/.gitignore
