@@ -5,6 +5,7 @@ import {
   Dimensions,
   TouchableOpacity,
   Image,
+  Text,
 } from "react-native";
 import MapView, { Marker } from "react-native-maps";
 import * as Location from "expo-location";
@@ -73,6 +74,101 @@ const InteractiveMap = () => {
             <View style={styles.userLocationMarker} />
           </Marker>
         )}
+
+        <Marker
+          coordinate={{ latitude: 51.5366, longitude: 7.2006 }}
+          title={"Aktivität 1"}
+        >
+          <View style={styles.activityMarker}>
+            <Image
+              source={require("@/assets/images/icons/activityMap/trend.png")}
+              style={styles.trendIcon}
+            />
+            <Text style={styles.activityText}>8</Text>
+          </View>
+        </Marker>
+        <Marker
+          coordinate={{ latitude: 51.5356, longitude: 7.2056 }}
+          title={"Aktivität 2"}
+        >
+          <View style={styles.activityMarker}>
+            <Text style={styles.activityText}>3</Text>
+          </View>
+        </Marker>
+        <Marker
+          coordinate={{ latitude: 51.5376, longitude: 7.2106 }}
+          title={"Aktivität 3"}
+        >
+          <View style={styles.activityMarker}>
+            <Text style={styles.activityText}>5</Text>
+          </View>
+        </Marker>
+
+        <Marker
+          coordinate={{ latitude: 51.5396, longitude: 7.2156 }}
+          title={"Aktivität 4"}
+        >
+          <View style={styles.activityMarker}>
+            <Image
+              source={require("@/assets/images/testimages/actvity1.png")}
+              style={styles.activityImage}
+            />
+            <Image
+              source={require("@/assets/images/icons/activityMap/trend.png")}
+              style={styles.trendIcon}
+            />
+            <View style={styles.activityMarkerTriangle} />
+          </View>
+        </Marker>
+
+        <Marker
+          coordinate={{ latitude: 51.5386, longitude: 7.2206 }}
+          title={"Aktivität 5"}
+        >
+          <View style={styles.activityMarker}>
+            <Image
+              source={require("@/assets/images/testimages/actvity2.png")}
+              style={styles.activityImage}
+            />
+            <Image
+              source={require("@/assets/images/icons/activityMap/trend.png")}
+              style={styles.trendIcon}
+            />
+            <View style={styles.activityMarkerTriangle} />
+          </View>
+        </Marker>
+
+        <Marker
+          coordinate={{ latitude: 51.5406, longitude: 7.2256 }}
+          title={"Aktivität 6"}
+        >
+          <View style={styles.activityMarker}>
+            <Image
+              source={require("@/assets/images/testimages/actvity3.png")}
+              style={styles.activityImage}
+            />
+            <Image
+              source={require("@/assets/images/icons/activityMap/trend.png")}
+            />
+            <View style={styles.activityMarkerTriangle} />
+          </View>
+        </Marker>
+
+        <Marker
+          coordinate={{ latitude: 51.5416, longitude: 7.2306 }}
+          title={"Aktivität 7"}
+        >
+          <View style={styles.activityMarker}>
+            <Image
+              source={require("@/assets/images/testimages/actvity4.png")}
+              style={styles.activityImage}
+            />
+            <Image
+              source={require("@/assets/images/icons/activityMap/trend.png")}
+            />
+            <View style={styles.activityMarkerTriangle} />
+          </View>
+        </Marker>
       </MapView>
 
       <TouchableOpacity style={[styles.button, styles.zoomIn]} onPress={zoomIn}>
@@ -163,5 +259,53 @@ const styles = StyleSheet.create({
     backgroundColor: "#fd573b",
     borderWidth: 5,
     borderColor: "white",
+  },
+  activityMarker: {
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "white",
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+    borderWidth: 2,
+    borderColor: "#f5f5f5",
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+    position: "relative",
+  },
+  activityMarkerTriangle: {
+    position: "absolute",
+    bottom: -10,
+    width: 0,
+    height: 0,
+    borderLeftWidth: 10,
+    borderRightWidth: 10,
+    borderTopWidth: 10,
+    borderLeftColor: "transparent",
+    borderRightColor: "transparent",
+    borderTopColor: "white",
+  },
+  trendIcon: {
+    position: "absolute",
+    top: -10,
+    right: -10,
+    width: 20,
+    height: 20,
+    backgroundColor: "#fd573b",
+    borderRadius: 10,
+    padding: 3,
+  },
+  activityText: {
+    fontSize: 16,
+    fontWeight: "bold",
+    color: "#333",
+  },
+  activityImage: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
   },
 });
