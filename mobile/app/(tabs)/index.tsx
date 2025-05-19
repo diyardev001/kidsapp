@@ -1,16 +1,15 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
+import InteractiveMap from "@/components/interactiveMap/InteractiveMap";
 
-const Map = () => {
+const index = () => {
   return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>Map</Text>
+    <View>
+      <InteractiveMap />
     </View>
   );
 };
 
-export default Map;
+export default index;
 
-const styles = StyleSheet.create({
-
-});
+const styles = StyleSheet.create({});
