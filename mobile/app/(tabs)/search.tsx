@@ -9,7 +9,7 @@ const ACTIVITIES_DATA = [
     title: 'Adventsgrabung',
     location: 'VK Stadium',
     date: '28.03 20:00',
-    price: 'Gratis',
+    price: '5€',
     imageUrl: require('../../assets/images/Adventsgrabung.jpg'),
     status: null,
   },
@@ -35,10 +35,55 @@ const ACTIVITIES_DATA = [
   id: '4',
   title: "Kulturrucksack Party",
   location: 'Jugendzentrum Herne',
-  date: '03.04 20:00',
+  date: '26.03 14:00',
   price: 'Gratis',
   imageUrl: require('../../assets/images/Kulturrucksack_Party.jpg'),
   status: null,
+  },
+  {
+    id: '5',
+    title: 'Kinder-Flohmarkt',
+    location: 'Marktplatz Innenstadt',
+    date: '15.06 10:00',
+    price: 'Standgebühr 5€',
+    imageUrl: require('../../assets/images/Flohmarkt.jpg'),
+    status: 'Anmeldung\nerforderlich',
+  },
+  {
+    id: '6',
+    title: 'Waldabenteuer für Kids',
+    location: 'Stadtwald Süd',
+    date: '22.06 15:00',
+    price: '3€',
+    imageUrl: require('../../assets/images/Waldabenteuer.jpg'),
+    status: null,
+  },
+  {
+    id: '7',
+    title: 'Märchenstunde in der Bibliothek',
+    location: 'Stadtbibliothek Zentrum',
+    date: '29.06 11:00',
+    price: 'Gratis',
+    imageUrl: require('../../assets/images/Märchenstunde.jpg'),
+    status: 'Fast\nausgebucht',
+  },
+  {
+    id: '8',
+    title: 'Sportfest der Grundschulen',
+    location: 'Sportanlage West',
+    date: '06.07 09:00',
+    price: 'Gratis',
+    imageUrl: require('../../assets/images/Sportfest.jpg'),
+    status: null,
+  },
+  {
+    id: '9',
+    title: 'Kreativwerkstatt: Töpfern',
+    location: 'Kunstschule "Farbtupfer"',
+    date: '13.07 14:30',
+    price: '10€ Materialkosten',
+    imageUrl: require('../../assets/images/Töpfern.jpg'),
+    status: null,
   },
 ];
 
@@ -47,13 +92,13 @@ type ActivityItemProps = {
   location: string;
   date: string;
   price: string;
-  imageUrl: ImageSourcePropType; // Update type to ImageSourcePropType
+  imageUrl: ImageSourcePropType;
   status?: string | null;
 };
 
 const ActivityItem: React.FC<ActivityItemProps> = ({ title, location, date, price, imageUrl, status }) => (
   <View style={styles.itemContainer}>
-    <Image source={imageUrl} style={styles.image} /> {/* Pass imageUrl directly to source */}
+    <Image source={imageUrl} style={styles.image} />
     <View style={styles.infoContainer}>
       <Text style={styles.title}>{title}</Text>
       <Text style={styles.location}>{location}</Text>
@@ -116,6 +161,7 @@ const styles = StyleSheet.create({
   infoContainer: {
     flex: 1,
     justifyContent: 'center',
+    marginRight: 70,
   },
   title: {
     fontSize: 18,
