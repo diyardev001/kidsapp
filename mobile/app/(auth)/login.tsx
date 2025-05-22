@@ -5,6 +5,8 @@ const login = () => {
   return (
     <View>
       <Text>login</Text>
+      <Text>login123</Text>
+      
     </View>
   )
 }
