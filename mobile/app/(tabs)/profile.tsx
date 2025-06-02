@@ -3,10 +3,10 @@ import React from 'react'
 
 const profile = () => {
   const user = {
-    isAuthenticated: true, 
+    isAuthenticated: true,
     name: "Kevin Mayer",
     email: "Kevin_Mayer@gmail.com",
-    phone: "+49 (179) 4354233",
+    phone: "+49 (173) 4354233",
     image: require('../../assets/images/profile.jpg'),
   };
   return (
