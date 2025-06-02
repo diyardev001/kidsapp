@@ -1,21 +1,38 @@
 import { StyleSheet, Text, TouchableOpacity, View ,Image} from 'react-native'
 import React from 'react'
+import { router } from 'expo-router'
 
 const profile = () => {
   const user = {
-    isAuthenticated: true,
+    isAuthenticated: false,
     name: "Kevin Mayer",
     email: "Kevin_Mayer@gmail.com",
     phone: "+49 (173) 4354233",
-    image: require('../../assets/images/profile.jpg'),
+    image: require('../../assets/images/icons/profile/profilSemih.png'),
   }
 //wenn nicht eingeloggt
   if (!user.isAuthenticated) {
-    return (
-      <View style={styles.centered}>
-        <Text>Bitte logge dich ein, um dein Profil zu sehen</Text>
+   return (
+      <View style={styles.container}>
+        <Image
+          source={require('../../assets/images/icons/profile/noProfile.png')} 
+          style={styles.avatar}
+        />
+        <Text style={styles.name}>Nicht eingeloggt</Text>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => router.push('/(auth)/login')}
+        >
+          <Text style={styles.buttonText}>Anmelden</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => router.push('/(auth)/register')}
+        >
+          <Text style={styles.buttonText}>Registrieren</Text>
+        </TouchableOpacity>
       </View>
-    );
+    )
   }
 
   //wenn eingeloggt
