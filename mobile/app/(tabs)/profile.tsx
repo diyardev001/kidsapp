@@ -4,7 +4,7 @@ import { router } from 'expo-router'
 
 const profile = () => {
   const user = {
-    isAuthenticated: false,
+    isAuthenticated: true,
     name: "Kevin Mayer",
     email: "Kevin_Mayer@gmail.com",
     phone: "+49 (173) 4354233",
