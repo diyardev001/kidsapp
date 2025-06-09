@@ -36,5 +36,5 @@ public class RegistrierterNutzer implements Nutzer {
         fetch = FetchType.LAZY,
         orphanRemoval = true
     )
-    private List<Aktivitaet> aktivitaeten = new ArrayList<>();
+    private List<Veranstaltung> aktivitaeten = new ArrayList<>();
 }

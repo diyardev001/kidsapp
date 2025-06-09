@@ -15,10 +15,18 @@ public class BewertungVerfuegbar extends Status {
     @OneToOne
     private Bewertung bewertung;
 
+    public BewertungVerfuegbar(Veranstaltung veranstaltung) {
+        super(veranstaltung);
+    }
+
+    public BewertungVerfuegbar() {
+
+    }
+
     @Override
     public void umfrageVerfuegbarSetzen() {
         UmfrageVerfuegbar neuerStatus = new UmfrageVerfuegbar();
-        bewertung.getAktivitaet().setStatus(neuerStatus);
+        bewertung.getVeranstaltung().setStatus(neuerStatus);
     }
 
     @Override
@@ -29,30 +37,30 @@ public class BewertungVerfuegbar extends Status {
     @Override
     public void ausstehenSetzen() {
         Ausstehend neuerStatus = new Ausstehend();
-        bewertung.getAktivitaet().setStatus(neuerStatus);
+        bewertung.getVeranstaltung().setStatus(neuerStatus);
     }
 
     @Override
     public void liveSetzen() {
         Live neuerStatus = new Live();
-        bewertung.getAktivitaet().setStatus(neuerStatus);
+        bewertung.getVeranstaltung().setStatus(neuerStatus);
     }
 
     @Override
     public void stattfindendSetzen() {
         Stattfindend neuerStatus = new Stattfindend();
-        bewertung.getAktivitaet().setStatus(neuerStatus);
+        bewertung.getVeranstaltung().setStatus(neuerStatus);
     }
 
     @Override
     public void abgeschlossenSetzen() {
         Abgeschlossen neuerStatus = new Abgeschlossen();
-        bewertung.getAktivitaet().setStatus(neuerStatus);
+        bewertung.getVeranstaltung().setStatus(neuerStatus);
     }
 
     @Override
     public void geloeschtSetzen() {
         Geloescht neuerStatus = new Geloescht();
-        bewertung.getAktivitaet().setStatus(neuerStatus);
+        bewertung.getVeranstaltung().setStatus(neuerStatus);
     }
 }

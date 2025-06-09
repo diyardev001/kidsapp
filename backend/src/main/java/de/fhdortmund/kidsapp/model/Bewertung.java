@@ -25,6 +25,6 @@ public class Bewertung {
     @ManyToOne
     private RegistrierterNutzer bewerter;  // User who gave the rating
     
-    @OneToOne(mappedBy = "bewertung")
-    private Aktivitaet aktivitaet;
+    @OneToOne(mappedBy = "bewertung", optional = true)
+    private Veranstaltung veranstaltung;
 }

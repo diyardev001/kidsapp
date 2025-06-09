@@ -6,14 +6,20 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 /**
- * Konkreter Status für gelöschte Aktivitäten
+ * Konkreter Status für gelöschte Veranstaltung
  */
 @Entity
 @Data
 @EqualsAndHashCode(callSuper = true)
 public class Geloescht extends Status {
-    @OneToOne
-    private Aktivitaet aktivitaet;
+
+    public Geloescht(Veranstaltung veranstaltung) {
+        super(veranstaltung);
+    }
+
+    public Geloescht() {
+
+    }
 
     @Override
     public void umfrageVerfuegbarSetzen() {

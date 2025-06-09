@@ -1,10 +1,12 @@
 package de.fhdortmund.kidsapp.service;
 
-import de.fhdortmund.kidsapp.model.Umfrage;
-import de.fhdortmund.kidsapp.Repository.UmfrageRepository;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import java.util.List;
+
+import de.fhdortmund.kidsapp.Repository.UmfrageRepository;
+import de.fhdortmund.kidsapp.model.Umfrage;
 
 /**
  * Service class for handling survey-related business logic.
@@ -25,7 +27,7 @@ public class UmfrageService {
     }
     
     public List<Umfrage> getUmfragenByErsteller(Long erstellerId) {
-        return umfrageRepository.findByErstellerId(erstellerId);
+        return umfrageRepository.findByErsteller_Id(erstellerId);
     }
     
     public Umfrage saveUmfrage(Umfrage umfrage) {

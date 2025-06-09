@@ -1,11 +1,6 @@
 package de.fhdortmund.kidsapp.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Inheritance;
-import jakarta.persistence.InheritanceType;
+import jakarta.persistence.*;
 import lombok.Data;
 
 /**
@@ -16,10 +11,20 @@ import lombok.Data;
 @Inheritance(strategy = InheritanceType.JOINED)
 @Data
 public abstract class Status {
+    @OneToOne
+    protected Veranstaltung veranstaltung;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
+    public Status(Veranstaltung veranstaltung) {
+        this.veranstaltung = veranstaltung;
+    }
+
+    public Status() {
+
+    }
+
     // Gemeinsame Methoden für alle Status
     public abstract void umfrageVerfuegbarSetzen();
     public abstract void bewertungVerfuegbarSetzen();

@@ -13,8 +13,10 @@ import lombok.EqualsAndHashCode;
 @Data
 @EqualsAndHashCode(callSuper = true)
 public class Stattfindend extends Status {
-    @OneToOne
-    private Aktivitaet aktivitaet;
+    public Stattfindend(Veranstaltung veranstaltung) {
+        super(veranstaltung);
+    }
+    public Stattfindend() {}
 
     @Override
     public void umfrageVerfuegbarSetzen() {
@@ -34,7 +36,7 @@ public class Stattfindend extends Status {
     @Override
     public void liveSetzen() {
         Live neuerStatus = new Live();
-        aktivitaet.setStatus(neuerStatus);
+        veranstaltung.setStatus(neuerStatus);
     }
 
     @Override
@@ -45,12 +47,12 @@ public class Stattfindend extends Status {
     @Override
     public void abgeschlossenSetzen() {
         Abgeschlossen neuerStatus = new Abgeschlossen();
-        aktivitaet.setStatus(neuerStatus);
+        veranstaltung.setStatus(neuerStatus);
     }
 
     @Override
     public void geloeschtSetzen() {
         Geloescht neuerStatus = new Geloescht();
-        aktivitaet.setStatus(neuerStatus);
+        veranstaltung.setStatus(neuerStatus);
     }
 }

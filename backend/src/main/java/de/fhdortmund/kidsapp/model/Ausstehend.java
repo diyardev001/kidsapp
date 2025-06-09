@@ -12,19 +12,25 @@ import lombok.EqualsAndHashCode;
 @Data
 @EqualsAndHashCode(callSuper = true)
 public class Ausstehend extends Status {
-    @OneToOne
-    private Aktivitaet aktivitaet;
+
+    public Ausstehend(Veranstaltung veranstaltung) {
+        super(veranstaltung);
+    }
+
+    public Ausstehend() {
+
+    }
 
     @Override
     public void umfrageVerfuegbarSetzen() {
         UmfrageVerfuegbar neuerStatus = new UmfrageVerfuegbar();
-        aktivitaet.setStatus(neuerStatus);
+        veranstaltung.setStatus(neuerStatus);
     }
 
     @Override
     public void bewertungVerfuegbarSetzen() {
         BewertungVerfuegbar neuerStatus = new BewertungVerfuegbar();
-        aktivitaet.setStatus(neuerStatus);
+        veranstaltung.setStatus(neuerStatus);
     }
 
     @Override
@@ -35,24 +41,24 @@ public class Ausstehend extends Status {
     @Override
     public void liveSetzen() {
         Live neuerStatus = new Live();
-        aktivitaet.setStatus(neuerStatus);
+        veranstaltung.setStatus(neuerStatus);
     }
 
     @Override
     public void stattfindendSetzen() {
         Stattfindend neuerStatus = new Stattfindend();
-        aktivitaet.setStatus(neuerStatus);
+        veranstaltung.setStatus(neuerStatus);
     }
 
     @Override
     public void abgeschlossenSetzen() {
         Abgeschlossen neuerStatus = new Abgeschlossen();
-        aktivitaet.setStatus(neuerStatus);
+        veranstaltung.setStatus(neuerStatus);
     }
 
     @Override
     public void geloeschtSetzen() {
         Geloescht neuerStatus = new Geloescht();
-        aktivitaet.setStatus(neuerStatus);
+        veranstaltung.setStatus(neuerStatus);
     }
 }

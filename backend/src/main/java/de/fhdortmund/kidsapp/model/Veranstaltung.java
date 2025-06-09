@@ -10,13 +10,15 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import lombok.Data;
+import lombok.Getter;
 
 /**
  * Entity representing an activity in the system.
  */
 @Entity
-@Data 
-public class Aktivitaet {
+@Getter
+    @Data
+public class Veranstaltung {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -27,30 +29,31 @@ public class Aktivitaet {
     
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "status_id")
-    private Status status;
+    private Status aktuellerstatus;
     
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "umfrage_id")
     private Umfrage umfrage;
     
+    @OneToOne(cascade = CascadeType.ALL, optional = true)
+    @JoinColumn(name = "bewertung_id")
+    private Bewertung bewertung;
+    
     @Embedded
-    private TerminT termin;
+    private TerminT termin;    
+
+    public Veranstaltung() {
+        initializeStatus();
+    }
+
+    private void initializeStatus() {
+        Status status = new Ausstehend();
+        status.setVeranstaltung(this);
+        this.aktuellerstatus = status;
+    }
 
     public void setStatus(Status neuerStatus) {
-        if (this.status != null) {
-            // Alte Referenz entfernen
-            this.status = null;
-        }
-        this.status = neuerStatus;
-        if (neuerStatus != null) {
-            // Neue bidirektionale Beziehung aufbauen
-            if (neuerStatus instanceof UmfrageVerfuegbar) {
-                ((UmfrageVerfuegbar) neuerStatus).setUmfrage(this.umfrage);
-            } else if (neuerStatus instanceof BewertungVerfuegbar) {
-                // Bewertung muss separat gesetzt werden
-            } else if (neuerStatus instanceof Live) {
-                ((Live) neuerStatus).setAktivitaet(this);
-            }
-        }
+        neuerStatus.setVeranstaltung(this);
+        this.aktuellerstatus = neuerStatus;
     }
 }

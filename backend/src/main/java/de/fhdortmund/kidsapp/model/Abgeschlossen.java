@@ -12,8 +12,14 @@ import lombok.EqualsAndHashCode;
 @Data
 @EqualsAndHashCode(callSuper = true)
 public class Abgeschlossen extends Status {
-    @OneToOne
-    private Aktivitaet aktivitaet;
+
+    public Abgeschlossen(Veranstaltung veranstaltung) {
+        super(veranstaltung);
+    }
+
+    public Abgeschlossen() {
+
+    }
 
     @Override
     public void umfrageVerfuegbarSetzen() {
@@ -48,6 +54,6 @@ public class Abgeschlossen extends Status {
     @Override
     public void geloeschtSetzen() {
         Geloescht neuerStatus = new Geloescht();
-        aktivitaet.setStatus(neuerStatus);
+        veranstaltung.setStatus(neuerStatus);
     }
 }

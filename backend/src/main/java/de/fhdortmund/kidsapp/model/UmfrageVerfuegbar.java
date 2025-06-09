@@ -15,6 +15,14 @@ public class UmfrageVerfuegbar extends Status {
     @OneToOne
     private Umfrage umfrage;
 
+    public UmfrageVerfuegbar(Veranstaltung veranstaltung) {
+        super(veranstaltung);
+    }
+
+    public UmfrageVerfuegbar() {
+
+    }
+
     @Override
     public void umfrageVerfuegbarSetzen() {
         // Bereits in diesem Status
@@ -23,37 +31,37 @@ public class UmfrageVerfuegbar extends Status {
     @Override
     public void bewertungVerfuegbarSetzen() {
         BewertungVerfuegbar neuerStatus = new BewertungVerfuegbar();
-        umfrage.getAktivitaet().setStatus(neuerStatus);
+        umfrage.getVeranstaltung().setStatus(neuerStatus);
     }
 
     @Override
     public void ausstehenSetzen() {
         Ausstehend neuerStatus = new Ausstehend();
-        umfrage.getAktivitaet().setStatus(neuerStatus);
+        umfrage.getVeranstaltung().setStatus(neuerStatus);
     }
 
     @Override
     public void liveSetzen() {
         Live neuerStatus = new Live();
-        umfrage.getAktivitaet().setStatus(neuerStatus);
+        umfrage.getVeranstaltung().setStatus(neuerStatus);
     }
 
     @Override
     public void stattfindendSetzen() {
         Stattfindend neuerStatus = new Stattfindend();
-        umfrage.getAktivitaet().setStatus(neuerStatus);
+        umfrage.getVeranstaltung().setStatus(neuerStatus);
     }
 
     @Override
     public void abgeschlossenSetzen() {
         Abgeschlossen neuerStatus = new Abgeschlossen();
-        umfrage.getAktivitaet().setStatus(neuerStatus);
+        umfrage.getVeranstaltung().setStatus(neuerStatus);
     }
 
     @Override
     public void geloeschtSetzen() {
         Geloescht neuerStatus = new Geloescht();
-        umfrage.getAktivitaet().setStatus(neuerStatus);
+        umfrage.getVeranstaltung().setStatus(neuerStatus);
     }
 
 
