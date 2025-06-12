@@ -1,8 +1,9 @@
+
 package de.stadtherne.stadtserver.model;
 
-public class SingleChoice extends Fragentyp {
+public class Text extends Fragentyp {
 
-    public SingleChoice(String titel, String beschreibung) {
+    public Text(String titel, String beschreibung) {
         super(titel, beschreibung);
     }
 
