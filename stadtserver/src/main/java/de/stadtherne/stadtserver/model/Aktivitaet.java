@@ -3,7 +3,7 @@ package de.stadtherne.stadtserver.model;
 public class Aktivitaet {
     private String titel;
     //termin fehlt noch
-    private Status status; 
+    private Status status;
 
 
     public void liveSetzen() { status.liveSetzen(this); }
