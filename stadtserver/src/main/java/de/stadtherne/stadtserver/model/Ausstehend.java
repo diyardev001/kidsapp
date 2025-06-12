@@ -3,11 +3,11 @@ package de.stadtherne.stadtserver.model;
 public class Ausstehend extends Status{
      @Override
     public void liveSetzen(Aktivitaet a) {
-        a.abgeschlossenSetzen(a);.setStatus(new LiveStatus());
+        a.setStatus(new Live());
     }
 
     @Override
     public void geloeschtSetzen(Aktivitaet a) {
-        a.setStatus(new GeloeschtStatus());
+        a.setStatus(new Geloescht());
     }
 }
