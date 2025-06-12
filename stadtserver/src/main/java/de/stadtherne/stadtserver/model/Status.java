@@ -2,34 +2,34 @@ package de.stadtherne.stadtserver.model;
 
 public abstract class Status {
 
-    public void trendingSetzen(Umfrage umfrage) {
+    public void trendingSetzen(Aktivitaet a) {
         
     }
 
-    public void umfrageVerfuegbarSetzen(Umfrage umfrage) {
+    public void umfrageVerfuegbarSetzen(Aktivitaet a) {
     }
 
-    public void bewertungVerfuegbarSetzen(Umfrage umfrage) {
+    public void bewertungVerfuegbarSetzen(Aktivitaet a) {
         
     }
 
-    public void abgeschlossenSetzen(Umfrage umfrage) {
+    public void abgeschlossenSetzen(Aktivitaet a) {
         
     }
 
-    public void liveSetzen(Umfrage umfrage) {
+    public void liveSetzen(Aktivitaet a) {
         
     }
 
-    public void ausstehendSetzen(Umfrage umfrage) {
+    public void ausstehendSetzen(Aktivitaet a) {
         
     }
 
-    public void stattfindendSetzen(Umfrage umfrage) {
+    public void stattfindendSetzen(Aktivitaet a) {
         
     }
 
-    public void geloeschtSetzen(Umfrage umfrage) {
+    public void geloeschtSetzen(Aktivitaet a) {
         
     }
 

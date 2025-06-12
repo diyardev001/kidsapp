@@ -2,12 +2,12 @@ package de.stadtherne.stadtserver.model;
 
 public class Ausstehend extends Status{
      @Override
-    public void liveSetzen(Umfrage umfrage) {
-        umfrage.setStatus(new LiveStatus());
+    public void liveSetzen(Aktivitaet a) {
+        a.abgeschlossenSetzen(a);.setStatus(new LiveStatus());
     }
 
     @Override
-    public void geloeschtSetzen(Umfrage umfrage) {
-        umfrage.setStatus(new GeloeschtStatus());
+    public void geloeschtSetzen(Aktivitaet a) {
+        a.setStatus(new GeloeschtStatus());
     }
 }
